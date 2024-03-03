@@ -1,12 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitcoin Halving Countdown</title>
-</head>
+<html>
 <body>
-    <h1>Bitcoin Halving Countdown</h1>
-    <iframe src="https://keyurvaghani.github.io/NotionWidgets/BitcoinHalvingCountdown.py"></iframe>
+
+<h2>Bitcoin Halving Counter</h2>
+
+<p id="counter"></p>
+
+<script>
+// Bitcoin halving happens every 210,000 blocks
+const halvingInterval = 210000;
+// Approximately 10 minutes per block
+const blockTime = 10 * 60;
+// Calculate the halving time in seconds
+const halvingTime = halvingInterval * blockTime * 60;
+// Get the current Bitcoin halving time in seconds
+const currentHalvingTime = 1687494400; // You can update this value
+
+// Function to format the time as hh:mm:ss
+function formatTime(time) {
+  const hours = Math.floor(time / 3600);
+  const minutes = Math.floor((time % 3600) / 60);
+  const seconds = time % 60;
+  return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+}
+
+// Function to update the counter
+function updateCounter() {
+  const remainingTime = currentHalvingTime - Math.floor(Date.now() / 1000);
+  document.getElementById("counter").innerText = formatTime(remainingTime);
+}
+
+// Update the counter every second
+setInterval(updateCounter, 1000);
+</script>
+
 </body>
 </html>
