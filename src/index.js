@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import BitcoinHalvingCountdown from './widgets/BitcoinHalvingCountdown';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <H1>Hello World!</H2>
   </React.StrictMode>
 );
 
