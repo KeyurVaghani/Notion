@@ -8,7 +8,7 @@ import BitcoinHalvingCountdown from './widgets/BitcoinHalvingCountdown';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <H1>Hello World!</H1>
+    <h1>Hello World!</h1>
   </React.StrictMode>
 );
 
